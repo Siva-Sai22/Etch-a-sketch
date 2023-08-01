@@ -1,0 +1,17 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.one-row{
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.small_box {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+}
