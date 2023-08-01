@@ -12,6 +12,23 @@ for(let i=0;i<16;i++){
 }
 
 const boxes = document.querySelectorAll('.small_box');
-boxes.forEach(box => box.addEventListener('mouseover',(e) => {
-    e.target.style.cssText = 'background-color: black;'
-}));
+let currently_active = false;
+main_div.addEventListener('click',()=>togglepen());
+
+function togglepen(){
+    if(!currently_active){
+        boxes.forEach(box => {
+            box.addEventListener('mouseover',changecolor);
+        })
+        currently_active = true;
+    }else{
+        boxes.forEach(box => {
+            box.removeEventListener('mouseover',changecolor);
+        })
+        currently_active = false;
+    }
+}
+
+function changecolor(e){
+    e.target.style = 'background-color: black;'
+}
