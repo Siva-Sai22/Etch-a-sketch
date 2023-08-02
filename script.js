@@ -1,15 +1,25 @@
-const main_div = document.querySelector('.main_div');
+let size = 32;
+//  prompt('Enter the size of grid');
 
-for(let i=0;i<16;i++){
-    const column_div = document.createElement('div');
-    column_div.classList.add('one-row');
-    for(let j=0;j<16;j++){
-        const row_div = document.createElement('div');
-        row_div.classList.add('small_box');
-        column_div.appendChild(row_div);
+const main_div = document.querySelector('.main_div');
+const onerowstyle = 'min-width: 500px; display: flex; justify-content: center;'
+const smallboxstyle = `width: ${500/size}px; height: ${500/size-2}px; border: 1px solid black;`
+
+function makegrid(size){
+    for(let i=0;i<size;i++){
+        const column_div = document.createElement('div');
+        column_div.classList.add('one-row');
+        for(let j=0;j<size;j++){
+            const row_div = document.createElement('div');
+            row_div.classList.add('small_box');
+            row_div.style.cssText = smallboxstyle;
+            column_div.appendChild(row_div);
+        }
+        column_div.style.cssText = onerowstyle;
+        main_div.appendChild(column_div);
     }
-    main_div.appendChild(column_div);
 }
+makegrid(size)
 
 const boxes = document.querySelectorAll('.small_box');
 let currently_active = false;
@@ -30,5 +40,5 @@ function togglepen(){
 }
 
 function changecolor(e){
-    e.target.style = 'background-color: black;'
+    e.target.style = smallboxstyle+'background-color: black;'
 }

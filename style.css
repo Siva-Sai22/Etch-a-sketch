@@ -4,20 +4,12 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    text-align: center;
+}
+
 .main_div {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     margin: 0 auto;
-}
-
-.one-row{
-    min-width: 400px;
-    display: flex;
-    justify-content: center;
-}
-
-.small_box {
-    width: 25px;
-    height: 25px;
-    border: 1px solid black;
 }
