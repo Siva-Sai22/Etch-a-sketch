@@ -18,12 +18,12 @@ main_div.addEventListener('click',()=>togglepen());
 function togglepen(){
     if(!currently_active){
         boxes.forEach(box => {
-            box.addEventListener('mouseover',changecolor);
+            box.addEventListener('mousemove',changecolor);
         })
         currently_active = true;
     }else{
         boxes.forEach(box => {
-            box.removeEventListener('mouseover',changecolor);
+            box.removeEventListener('mousemove',changecolor);
         })
         currently_active = false;
     }
