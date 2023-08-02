@@ -40,7 +40,11 @@ function togglepen(){
 }
 
 function changecolor(e){
-    e.target.style = smallboxstyle+'background-color: black;'
+    if(!eraser_active){
+        e.target.style = smallboxstyle+'background-color: black;';
+    }else{
+        e.target.style = smallboxstyle;
+    }
 }
 
 const cleargrid = document.querySelector('.cleargrid');
@@ -50,3 +54,12 @@ function clear_grid(){
         box.style.cssText = smallboxstyle;
     });
 }
+
+pen_active = true;
+eraser_active = false;
+
+const eraser = document.querySelector('.eraser');
+eraser.addEventListener('click',()=>eraser_active = true)
+
+const pen = document.querySelector('.pen');
+pen.addEventListener('click',()=>eraser_active = false);
