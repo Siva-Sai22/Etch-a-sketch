@@ -1,9 +1,9 @@
-let size = 32;
+let size = 16;
 //  prompt('Enter the size of grid');
 
 const main_div = document.querySelector('.main_div');
 const onerowstyle = 'min-width: 500px; display: flex; justify-content: center;'
-const smallboxstyle = `width: ${500/size}px; height: ${500/size-2}px; border: 1px solid black;`
+const smallboxstyle = `width: ${500/size}px; height: ${500/size-2}px; border: 1px solid black; background-color:white;`
 
 function makegrid(size){
     for(let i=0;i<size;i++){
@@ -41,4 +41,12 @@ function togglepen(){
 
 function changecolor(e){
     e.target.style = smallboxstyle+'background-color: black;'
+}
+
+const cleargrid = document.querySelector('.cleargrid');
+cleargrid.addEventListener('click',()=>clear_grid());
+function clear_grid(){
+    boxes.forEach(box => {
+        box.style.cssText = smallboxstyle;
+    });
 }
