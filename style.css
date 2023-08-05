@@ -1,7 +1,14 @@
 body {
     margin: 0px;
     padding: 0px;
+    height: 100vh;
     box-sizing: border-box;
+    background-color: #6F61C0;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1{
@@ -21,13 +28,41 @@ h3 {
 .buttons {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     max-width: 100px;
-    gap: 16px;
+}
+
+button {
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0;
+    border: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.activebutton {
+    font-size: 19px;
+    padding: 11px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0;
+    border: 0;
+    background-color: #8BE8E5;
+    color: black;
+}
+
+.cleargrid:active {
+    font-weight: bold;
+    box-shadow: 0;
+    border: 0;
+    background-color: #8BE8E5;
+    color: black;
 }
 
 .container {
     height: 500px;
-    background-color: grey;
     display: flex;
     justify-content: center;
     gap: 64px;

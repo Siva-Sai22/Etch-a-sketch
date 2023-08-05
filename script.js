@@ -1,9 +1,8 @@
-let size = 16;
-//  prompt('Enter the size of grid');
+let size = prompt('Enter the size of grid');
 
 const main_div = document.querySelector('.main_div');
 const onerowstyle = 'min-width: 500px; display: flex; justify-content: center;'
-const smallboxstyle = `width: ${500/size}px; height: ${500/size-2}px; border: 1px solid black; background-color:white;`
+const smallboxstyle = `width: ${500/size}px; height: ${500/size-2}px; background-color:#D5FFE4;`
 
 function makegrid(size){
     for(let i=0;i<size;i++){
@@ -59,7 +58,16 @@ pen_active = true;
 eraser_active = false;
 
 const eraser = document.querySelector('.eraser');
-eraser.addEventListener('click',()=>eraser_active = true)
-
 const pen = document.querySelector('.pen');
-pen.addEventListener('click',()=>eraser_active = false);
+
+eraser.addEventListener('click',(e)=>{
+    eraser_active = true
+    e.target.classList.add('activebutton');
+    pen.classList.remove('activebutton');
+})
+
+pen.addEventListener('click',(e)=>{
+    eraser_active = false
+    e.target.classList.add('activebutton');
+    eraser.classList.remove('activebutton');
+});
